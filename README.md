@@ -1,1 +1,1 @@
-# ATM-Simulator-Ruby
+# Sample ATM Simulator using Ruby
