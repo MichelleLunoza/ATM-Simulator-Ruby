@@ -26,7 +26,7 @@ while cmd != "Quit" do
         file_content = File.read('balance.txt');
         puts "How much would you like to withdraw?"
         amount = gets.chomp
-        if amount.to_f <= 50000
+        if amount.to_f <= 50000 && amount.to_f > 0
           if amount.to_f > 0 && amount.to_f <= file_content.to_f
               current_balance = file_content.to_f - amount.to_f
               File.write('balance.txt',current_balance)
@@ -35,6 +35,8 @@ while cmd != "Quit" do
           else
               puts "Insufficient Balance"
           end
+        elsif amount.to_f == 0
+          puts "Your Withdraw amount must be above 0"
         else
           puts "Withdrawal limit is $50,000.00"
         end
